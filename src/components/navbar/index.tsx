@@ -22,8 +22,9 @@ export const Navbar: React.FC = () => {
         borderBottomStyle: "solid",
         padding: theme.spacing(2),
         justifyContent: "center",
+        display: { xs: "none", md: "block", sm: "none" },
       }}
-      elevation={0}
+      elevation={1}
       enableColorOnDark
     >
       <Toolbar

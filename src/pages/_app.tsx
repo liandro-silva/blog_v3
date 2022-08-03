@@ -9,6 +9,8 @@ import { CacheProvider, EmotionCache } from "@emotion/react";
 import createEmotionCache from "../helpers/createEmotionCache";
 
 import theme from "../theme";
+import { FragmenStackConsumer } from "src/components/fragment-stack/contex";
+import { FragmentStack } from "src/components/fragment-stack";
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -25,7 +27,10 @@ export default function MyApp(props: MyAppProps) {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Component {...pageProps} />
+        <FragmenStackConsumer>
+          <FragmentStack />
+          <Component {...pageProps} />
+        </FragmenStackConsumer>
       </ThemeProvider>
     </CacheProvider>
   );
