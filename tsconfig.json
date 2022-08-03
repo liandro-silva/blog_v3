@@ -16,7 +16,14 @@
     "incremental": true,
     "types": ["reflect-metadata"],
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "baseUrl": ".",
+    "paths": {
+      "@core/*": ["./src/@core/*"],
+      "@theme": ["./src/theme/index"],
+
+      "@components": ["./src/components/index"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

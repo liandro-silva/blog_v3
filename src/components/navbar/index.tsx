@@ -1,10 +1,13 @@
 import React from "react";
-import { AppBar, Box, Toolbar, Typography } from "@mui/material";
-import Button from "@mui/material/Button";
+
+import { AppBar, Box, Toolbar, Typography, Button } from "@mui/material";
+
 import { useRouter } from "next/router";
-import theme from "../../theme";
 import Link from "next/link";
-import { CustomNavbarLink } from "../index";
+
+import theme from "@theme";
+
+import { CustomNavbarLink } from "@components";
 
 export const Navbar: React.FC = () => {
   const router = useRouter();

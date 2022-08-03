@@ -1,7 +1,7 @@
-import { HttpResponseInterceptor } from "./../protocols/HttpResponseInterceptor";
-import { GetAllPostsModel } from "../../domain/models/get-all-posts.model";
-import { GetAllPosts } from "../../domain/usecases/get-all-posts.domain";
-import { HttpClient } from "../protocols/HttpClient";
+import { HttpResponseInterceptor, HttpClient } from "@core/data/protocols";
+
+import { GetAllPostsModel } from "@core/domain/models/get-all-posts.model";
+import { GetAllPosts } from "@core/domain/usecases/get-all-posts.domain";
 
 export class RemoteGetAllPosts implements GetAllPosts {
   constructor(
