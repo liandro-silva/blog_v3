@@ -4,11 +4,12 @@ import { red } from "@mui/material/colors";
 const palette: PaletteOptions = {
   mode: "dark",
   primary: {
-    main: "#FFFFFF",
-    contrastText: "#101827",
+    main: "#101827",
+    contrastText: "#FFFFFF",
   },
   secondary: {
     main: "#DFF5FF",
+    contrastText: "#101827",
   },
   background: {
     default: "#101827",
