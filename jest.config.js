@@ -35,4 +35,4 @@ module.exports = {
     '^.+\\.module\\.(css|sass|scss)$',
   ],
   testEnvironment: 'jest-environment-jsdom',
-}
+};
