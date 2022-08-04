@@ -1,10 +1,18 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
+import { useEffect } from "react";
 import { GetAllPostsModel } from "../@core/domain/models/get-all-posts.model";
 import { makeGetAllPosts } from "../@core/main/factories/usecases/remote-get-all-posts.factory";
 import DefaultLayout from "../layouts/default";
 
-export default function Home(posts: GetAllPostsModel) {
+export default function Home() {
+  useEffect(() => {
+    (async () => {
+      const service = makeGetAllPosts();
+      const posts = await service.findAll();
+      console.log(posts);
+    })();
+  }, []);
   return (
     <div>
       <Head>
@@ -24,19 +32,3 @@ export default function Home(posts: GetAllPostsModel) {
     </div>
   );
 }
-
-export const getStaticProps: GetStaticProps = async () => {
-  const service = makeGetAllPosts();
-  const posts = await service.findAll();
-
-  if (!posts) {
-    return {
-      notFound: true,
-    };
-  }
-
-  return {
-    props: { posts },
-    revalidate: 60,
-  };
-};

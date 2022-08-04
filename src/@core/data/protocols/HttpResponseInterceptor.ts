@@ -6,8 +6,10 @@ export class HttpResponseInterceptor {
     switch (httpResponse.statusCode) {
       case HttpStatus.OK:
         return httpResponse.body;
-      default:
+      case HttpStatus.NOT_MODIFIED:
         return httpResponse.body;
+      default:
+        throw new Error("Opps! Algo deu errado, tente novamente.");
     }
   }
 }
