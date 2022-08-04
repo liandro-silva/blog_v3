@@ -1,4 +1,4 @@
-import { HttpStatus } from './HttpStatus';
+import { HttpStatus } from "./HttpStatus";
 
 export type HttpResponse<T = any> = {
   statusCode: HttpStatus;
